@@ -52,3 +52,23 @@ thalach : maximum heart rate achieved
 
 target : 0= less chance of heart attack 1= more chance of heart attack
 https://www.kaggle.com/rashikrahmanpritom/heart-attack-analysis-prediction-dataset
+My third data set is
+Employee Satisfaction Index Dataset
+The Employee Satisfaction Index dataset analyzes how satisfied employees of the target companies are with their jobs. It uses a methodology known as the Employee Satisfaction Index (ESI), which is widely utilised in several nations. Its revised version can also be used to assess the satisfaction of self-employed individuals who run their own micro-businesses.
+it is true that changes in employee satisfaction have an impact on company performance. I find that changes in employee happiness are positively and significantly associated to future quarterly earnings surprises,so using a unique dataset based on self-administered employee questionnaires. Furthermore, the effect is stronger for organisations with higher information asymmetries and a greater reliance on human capital.
+The data set has following attributes.
+Employee Id
+ Age
+ Department
+ Employee location
+ Employee's education
+ Recruitment type
+ Job level (1 to 5).1 being the least and 5 being the highest position
+ Onsite (If employee went to onsite location than 1 otherwise 0)
+ Awards
+ Certifications
+ Salary
+ Satisfied (whether employee is satisfied with job or not)
+ Kaggle provided the data for the project. Many firms provide a platform for employees to review their work environment. This is a fictitious dataset created to assist data analysts in exploring trends and insights related to employee job satisfaction indexes.So our data set is balanced and we are dealing with classification problem in this data.In this dataset the target variable is 'satisfied'.The target variable identifies whether a employee is satisfied with the company or not.This data set has 500 Rows and 14 Columns .Here's the link of the data set that is available on kaggle.
+
+\url{http:https://www.kaggle.com/mohamedharris/employee-satisfaction-index-dataset}
