@@ -1,0 +1,43 @@
+import pandas as pd
+import numpy as np
+from IPython.display import Image
+np.set_printoptions(precision = 3)
+df = pd.read_csv('jester-data-1.csv')
+print(df)
+        74  -7.82   8.79  -9.66  -8.16  ...  99.22  -5.63  99.23  99.24  99.25
+0      100   4.08  -0.29   6.36   4.37  ...  -2.14   3.06   0.34  -4.32   1.07
+1       49  99.00  99.00  99.00  99.00  ...  99.00  99.00  99.00  99.00  99.00
+2       48  99.00   8.35  99.00  99.00  ...  99.00  99.00  99.00  99.00  99.00
+3       91   8.50   4.61  -4.17  -5.39  ...   1.55   3.11   6.55   1.80   1.60
+4      100  -6.17  -3.54   0.44  -8.50  ...  -3.35   0.05  -9.08  -5.05  -3.45
+...    ...    ...    ...    ...    ...  ...    ...    ...    ...    ...    ...
+11186   72   2.82  -4.32  -8.64  -8.83  ...  99.00  99.00  99.00  99.00  99.00
+11187   41  99.00  99.00  99.00  99.00  ...  99.00  99.00  99.00  99.00  99.00
+11188   40  99.00  99.00  99.00  99.00  ...  99.00  99.00  99.00  99.00  99.00
+11189  100  -3.25   7.67   2.96  -2.33  ...   4.37   2.57   7.91  -3.20  -1.02
+11190   59  99.00  99.00  99.00  -5.58  ...    NaN    NaN    NaN    NaN    NaN
+
+[11191 rows x 101 columns]
+arr = df.values
+print(arr.shape)
+(11191, 101)
+rated = np.where(arr!=99)
+print(len(rated[0]), rated[1].shape)
+818450 (818450,)
+def replace(orig, percentage=0.1):
+  """
+  Replaces 'percentage'% of the original values in 'orig' with 99's
+  :param orig: original data array
+  :param percentage: percentage of values to replace (0<percentage<1)
+  """
+  new_data = orig.copy()
+  rated = np.where(arr!=99)
+  n_rated = len(rated[0])
+  idx = np.random.choice(n_rated, size=int(percentage*n_rated), replace=False)
+  new_data[rated[0][idx], rated[1][idx]] = 99
+  return new_data, (rated[0][idx], rated[1][idx])
+new_arr, idx = replace(arr, 0.1)
+arr[idx[0][0], idx[1][0]]
+-5.15
+new_arr[idx[0][0], idx[1][0]]
+99.0
